@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 5000;
 var app = express();
 
 // Tell handlebars the absolute path to partials
@@ -68,7 +69,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`Server is up on port ${ PORT }`);
+app.listen(port, () => {
+    console.log(`Server is up on port ${ port }`);
 });
